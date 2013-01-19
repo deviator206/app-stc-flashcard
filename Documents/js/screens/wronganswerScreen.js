@@ -16,7 +16,7 @@ WrongAnswerScreen.prototype.setUp = function() {
 	this.mApplication.showSelectedScreen('grey_bottom');
 	//	var ss= getAssetPath("img",config.questionSet[this.mApplication.nQuestionIndex].img_url)
 	var sb = getAssetPath("img", "img/iPhone/next-question.png")
-	var sContent = '<div id="game_screen_logo_4" class="gameScreenLogo"></div><div id= "imgHolder_In_Revealing" class="gameImg"></div><div class="questionTxt"><p>No. You are wrong!</p></div><div class="explnDiv"><p>' + config.questionSet[this.mApplication.nQuestionIndex].solution + '</p></div><div id="wrong_next_question" class="nextQues"></div>'
+	var sContent = '<div id="game_screen_logo_4" class="gameScreenLogo"></div><div id= "imgHolder_In_Revealing" class="gameImg"></div><div class="questionTxt"><p>No, almost...</p></div><div class="explnDiv"><p>' + config.questionSet[this.mApplication.nQuestionIndex].solution + '</p></div><div id="wrong_next_question" class="nextQues"></div>'
 	document.getElementById('wronganswerScreen').innerHTML = '' + sContent;
 	var sT = getAssetPath("img", "img/images/image4.png");
 	document.getElementById('game_screen_logo_4').style.backgroundImage = "url(" + sT + ")";
@@ -31,6 +31,8 @@ WrongAnswerScreen.prototype.setUp = function() {
 	};*/
 
 	var that = this;
+	//document.getElementById('wrong_next_question').innerHTML = "Please click on a flash card of your choice, to play."
+	//document.getElementById('wrong_next_question').className = "pickNextCardFromMiniCarousel"
 	document.getElementById('wrong_next_question').appendChild(that.mApplication.arrImagesTrack['pick_ur_question']);
 	/*document.getElementById('wrong_next_question').onmouseover = function() {
 		var myDiv = document.getElementById('wrong_next_question');

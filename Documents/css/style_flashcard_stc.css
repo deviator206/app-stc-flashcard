@@ -641,7 +641,7 @@ float: left;
     font-size: 16px;
     left: 64px;
     position: relative;
-    top: 80px;
+    top: 60px;
 	float:left;
 	height:350px;
 	width:80%;
@@ -917,7 +917,7 @@ right: 175px;
 
 .nextQues{
 	position: absolute;
-	height: 35px;
+	height: 55px;
 	width: 165px;
 	margin-top: 240px;
 	float: right;
@@ -1020,10 +1020,9 @@ color: white;
 }
 
 
-
-
-
-
+#readMoreText{
+	font-size: 12px;
+}
 
 
 

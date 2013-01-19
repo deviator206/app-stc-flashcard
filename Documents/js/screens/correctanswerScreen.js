@@ -23,6 +23,8 @@ CorrectAnswerScreen.prototype.setUp = function() {
 	document.getElementById('game_screen_logo_3').style.backgroundImage = "url(" + sC + ")";
 
 	var that = this;
+	//document.getElementById('correct_next_question').innerHTML = "Please click on a flash card of your choice, to play."
+	//document.getElementById('correct_next_question').className = "pickNextCardFromMiniCarousel"
 	document.getElementById('correct_next_question').appendChild(that.mApplication.arrImagesTrack['pick_ur_question']);
 	/*document.getElementById('correct_next_question').onmouseover = function() {
 		var myDiv = document.getElementById('correct_next_question');
