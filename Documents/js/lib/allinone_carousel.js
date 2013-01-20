@@ -164,7 +164,6 @@
 	}
 
 	function animateDiv_SMALL(the_div, new_left, new_top, new_width, new_height, new_opacity, autoplay_next, direction, current_obj, options, allinone_carousel_elementTitle, imgs, total_images, allinone_carousel_playOver, bottomNavButs, allinone_carousel_container, contentHolderUnitOrigWidth, contentHolderUnitOrigHeight) {
-		console.log('animatin ')
 		current_obj.slideIsRunning = true;
 		// the title
 		allinone_carousel_elementTitle.html(jQuery(imgs[current_obj.current_img_no]).attr('data-title'));
