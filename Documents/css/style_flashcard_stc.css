@@ -509,7 +509,7 @@ textarea {
 #loadingScreen
 {
 	display: block;
-	margin-top: 180px;
+	margin-top: 130px;
 	/*margin-left: 250px;*/
 	
 }
@@ -1024,6 +1024,12 @@ color: white;
 	font-size: 12px;
 }
 
+
+#gameLoadingText{
+	padding-left: 50px;
+font-size: 20px;
+font-weight: bold;
+}
 
 
 /* ==========================================================================
@@ -1552,8 +1558,8 @@ skins available:
 	position:absolute;
 	width: 34px;
 	height: 46px;
-	right: 154px;
-	top: -23px;
+	right: 150px;
+	top: -13px;
 	background-color: white;
 	cursor: pointer;
 }
@@ -1568,7 +1574,7 @@ skins available:
 	position:absolute;
 	left: 155px;
 	right: 170px;
-top: -23px;
+top: -13px;
 	width: 34px;
 	height: 46px;
 	background-color: white;

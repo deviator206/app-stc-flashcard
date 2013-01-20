@@ -134,7 +134,7 @@ textarea {
 #loadingScreen
 {
 	display: block;
-	margin-top: 180px;
+	margin-top: 130px;
 	/*margin-left: 250px;*/
 	
 }
@@ -649,6 +649,12 @@ color: white;
 	font-size: 12px;
 }
 
+
+#gameLoadingText{
+	padding-left: 50px;
+font-size: 20px;
+font-weight: bold;
+}
 
 
 /* ==========================================================================

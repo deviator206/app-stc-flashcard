@@ -168,7 +168,7 @@ ApplicationWrapper.prototype.startGameTimer = function(i) {
 	this.arrQuestion = new Array();
 	this.mQuestionAnswered = new Array();
 	var that = this;
-	this.nQuizTimeCntr = 450;
+	this.nQuizTimeCntr = 1;
 	this.nQuizScore = 0;
 
 	//alert(config.questionSet.length);

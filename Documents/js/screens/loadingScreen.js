@@ -7,7 +7,7 @@ function LoadingScreen(app) {
 	this.mDivName = "loadingScreen"
 	this.mGameSplashLoader = null;
 	this.mImageRow = 10;
-	this.loadingProgress = new Array(-1, -1, -1);
+	this.loadingProgress = new Array(-1, -1, -1,-1, -1, -1,-1, -1, -1,-1,-1);
 	this.mAssetLoaded = false;
 
 	this.setUp()
@@ -17,7 +17,7 @@ function LoadingScreen(app) {
 LoadingScreen.prototype.setUp = function() {
 
 	this.mApplication.showScreen(this.mDivName)
-	document.getElementById('loadingScreen').innerHTML = '<div id="loadingScreen_front" style="width: 117px;height: 252px;"></div>'
+	document.getElementById('loadingScreen').innerHTML = '<div id="loadingScreen_front" style="width: 117px;height: 252px;"></div><br><br><div id="gameLoadingText"> Countdown Begins </div>'
 	//var sT = getAssetPath("img","img/splash/whiteProgBar.png")
 	/*for(var i=0;i<25;i++)
 	 {
@@ -123,10 +123,17 @@ LoadingScreen.prototype.setUp = function() {
 	 this.mGameAssetLoader.addImage("img/iPhone/set10_0002_screen-4-bg.png");
 	 this.mGameAssetLoader.addImage("img/iPhone/next-question-button.png");*/
 
-	this.mApplication.arrImagesTrack['percent0'] = this.mGameSplashLoader.addImage(getAssetPath("img", "img/images/loading_anim_0.jpg"));
-	this.mApplication.arrImagesTrack['percent10'] = this.mGameSplashLoader.addImage(getAssetPath("img", "img/images/loading_anim_10.jpg"));
+	this.mApplication.arrImagesTrack['percent0'] = this.mGameSplashLoader.addImage(getAssetPath("img", "img/images/loading_anim_0.png"));
+	this.mApplication.arrImagesTrack['percent10'] = this.mGameSplashLoader.addImage(getAssetPath("img", "img/images/loading_anim_10.png"));
+	this.mApplication.arrImagesTrack['percent20'] = this.mGameSplashLoader.addImage(getAssetPath("img", "img/images/loading_anim_20.png"));
+	this.mApplication.arrImagesTrack['percent30'] = this.mGameSplashLoader.addImage(getAssetPath("img", "img/images/loading_anim_30.png"));
+	this.mApplication.arrImagesTrack['percent40'] = this.mGameSplashLoader.addImage(getAssetPath("img", "img/images/loading_anim_40.png"));
 	this.mApplication.arrImagesTrack['percent50'] = this.mGameSplashLoader.addImage(getAssetPath("img", "img/images/loading_anim_50.png"));
-	this.mApplication.arrImagesTrack['percent90'] = this.mGameSplashLoader.addImage(getAssetPath("img", "img/images/loading_anim_90.jpg"));
+	this.mApplication.arrImagesTrack['percent60'] = this.mGameSplashLoader.addImage(getAssetPath("img", "img/images/loading_anim_60.png"));
+	this.mApplication.arrImagesTrack['percent70'] = this.mGameSplashLoader.addImage(getAssetPath("img", "img/images/loading_anim_70.png"));
+	this.mApplication.arrImagesTrack['percent80'] = this.mGameSplashLoader.addImage(getAssetPath("img", "img/images/loading_anim_80.png"));
+	this.mApplication.arrImagesTrack['percent90'] = this.mGameSplashLoader.addImage(getAssetPath("img", "img/images/loading_anim_90.png"));
+	this.mApplication.arrImagesTrack['percent100'] = this.mGameSplashLoader.addImage(getAssetPath("img", "img/images/loading_anim_100.png"));
 
 	var thatObject = this;
 	this.mGameAssetLoader.addProgressListener(function(e) {
@@ -175,7 +182,18 @@ LoadingScreen.prototype.gameAssetLoadingProgress = function(e) {
 	var doAnim = false;
 	var percentage = Number( Math.round(mLoading / 10))
 	
-
+	
+	
+	this.mImageRow = percentage*10;
+	
+	if ( Number(this.loadingProgress[percentage]) == -1) {
+		this.loadingProgress[percentage] = 1;
+		this.mImageRow = percentage*10
+		console.log(this.mImageRow);
+		doAnim = true;
+	}
+	
+/*
 	if (percentage == 1 && Number(this.loadingProgress[0]) == -1) {
 		doAnim = true;
 		this.mImageRow = this.loadingProgress[0] = 10;
@@ -187,10 +205,10 @@ LoadingScreen.prototype.gameAssetLoadingProgress = function(e) {
 		doAnim = true;
 		this.mImageRow = this.loadingProgress[2] = 90;
 
-	}
+	}*/
 	//console.log(percentage + " :: " + doAnim + " :: " + this.loadingProgress[0] + " > " + typeof (this.loadingProgress[0]))
 	if (doAnim) {
-		console.log(" showing " + this.mImageRow)
+		//console.log(" showing " + this.mImageRow)
 		var that = this;
 		if (!this.mAssetLoaded) {
 			$("#loadingScreen_front").flip({
