@@ -208,9 +208,10 @@ LoadingScreen.prototype.gameAssetLoadingProgress = function(e) {
 	}*/
 	//console.log(percentage + " :: " + doAnim + " :: " + this.loadingProgress[0] + " > " + typeof (this.loadingProgress[0]))
 	if (doAnim) {
-		//console.log(" showing " + this.mImageRow)
+		console.log(" showing " + this.mImageRow)
 		var that = this;
 		if (!this.mAssetLoaded) {
+			//document.getElementById('loadingScreen_front').style.backgroundColor ="rgb(253, 253, 253)";
 			$("#loadingScreen_front").flip({
 
 				direction : 'rl',
@@ -221,6 +222,7 @@ LoadingScreen.prototype.gameAssetLoadingProgress = function(e) {
 						document.getElementById('loadingScreen_front').removeChild(document.getElementById('loadingScreen_front').lastChild);
 					}
 					document.getElementById('loadingScreen_front').appendChild(that.mApplication.arrImagesTrack['percent' + that.mImageRow]);
+					document.getElementById('loadingScreen_front').style.backgroundColor ="rgb(253, 253, 253)";
 				}
 			})
 		}

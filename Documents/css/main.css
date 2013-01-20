@@ -317,11 +317,19 @@ left: 492px;
 
 
 #carouselMessage{
-	position: absolute;
+/*	position: absolute;
 margin-left: 125px;
 margin-top: 45px;
 font-weight: bold;
 font-size: 26px;
+*/
+position: absolute;
+margin-left: 125px;
+margin-top: 470px;
+font-weight: bold;
+font-size: 26px;
+z-index: 1000;
+
 }
 
 .caraousalCardImgPage3{
@@ -542,7 +550,7 @@ right: 175px;
 
 .nextQues{
 	position: absolute;
-	height: 55px;
+	height: 35px;
 	width: 165px;
 	margin-top: 240px;
 	float: right;
@@ -550,6 +558,7 @@ right: 175px;
 	bottom: 91px;
 	font-size: 18px;
 	line-height: 24px;
+	
 }
 
 /* Screen 6 */
@@ -558,34 +567,31 @@ right: 175px;
 
 .finalScreen{
 	/*background:url(../images/image7.png) no-repeat;*/
-	background-size:100% 100%;
-	height:550px;
-	width:800px;
-	/*width:910px;*/
-	z-index:-1;
+	height: 550px;
+width: 860px;
+z-index: -1;
 }
 
 .congratsTxt{
-	position:relative;
-	height:35px;
-	width:165px;
-	top:200px;
-	left:90px;
-	color:#9C201E;
-	font-size:40px;
-	font-weight:bold;
+	position: relative;
+height: 35px;
+width: 165px;
+top: 200px;
+left: 30px;
+color: #9C201E;
+font-size: 42px;
+font-weight: bold;
 }
 
 .conMsg{
-	position:relative;
-	height:35px;
-	/*width:605px;*/
-	width:638px;
-	top:210px;
-	left:90px;
-	color:#5376A1;
-	font-size:28px;
-	font-weight:bold;
+	position: relative;
+height: 35px;
+width: 638px;
+top: 210px;
+left: 32px;
+color: #5376A1;
+font-size: 28px;
+font-weight: bold;
 }
 
 
