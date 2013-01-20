@@ -128,7 +128,7 @@ ApplicationWrapper.prototype.loadMiniCarousel = function() {
 			skin : 'powerful',
 			width : 130,
 			height : 75,
-			numberOfVisibleItems : 5,
+			numberOfVisibleItems : 3,
 			callback : function(msg) {
 				////console.log(" CLICKED");
 				if (document.getElementById('SM_carouselParent_MINI') != null)
