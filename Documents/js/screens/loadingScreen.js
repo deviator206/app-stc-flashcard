@@ -8,6 +8,7 @@ function LoadingScreen(app) {
 	this.mGameSplashLoader = null;
 	this.mImageRow = 10;
 	this.loadingProgress = new Array(-1, -1, -1,-1, -1, -1,-1, -1, -1,-1,-1);
+	this.loadingProgress_ImagName = new Array(100, 90, 80,70, 60, 50,40, 30, 20,10,0);
 	this.mAssetLoaded = false;
 
 	this.setUp()
@@ -158,8 +159,8 @@ LoadingScreen.prototype.setUp = function() {
 LoadingScreen.prototype.splashAssetLoaded = function() {
 	document.getElementById('main_game_screen').style.display = "block"
 	document.getElementById('loading_script_tags').style.display = "none"
-
-	document.getElementById('loadingScreen_front').appendChild(this.mApplication.arrImagesTrack['percent0']);
+	this.mImageRow = 100;
+	document.getElementById('loadingScreen_front').appendChild(this.mApplication.arrImagesTrack['percent'+this.mImageRow]);
 	this.mGameAssetLoader.start();
 }
 
@@ -184,12 +185,12 @@ LoadingScreen.prototype.gameAssetLoadingProgress = function(e) {
 	
 	
 	
-	this.mImageRow = percentage*10;
+	//this.mImageRow = percentage*10;
 	
 	if ( Number(this.loadingProgress[percentage]) == -1) {
 		this.loadingProgress[percentage] = 1;
-		this.mImageRow = percentage*10
-		console.log(this.mImageRow);
+		this.mImageRow = this.loadingProgress_ImagName[percentage]
+		console.log("NAME :"+this.mImageRow);
 		doAnim = true;
 	}
 	
@@ -208,7 +209,7 @@ LoadingScreen.prototype.gameAssetLoadingProgress = function(e) {
 	}*/
 	//console.log(percentage + " :: " + doAnim + " :: " + this.loadingProgress[0] + " > " + typeof (this.loadingProgress[0]))
 	if (doAnim) {
-		console.log(" showing " + this.mImageRow)
+		
 		var that = this;
 		if (!this.mAssetLoaded) {
 			//document.getElementById('loadingScreen_front').style.backgroundColor ="rgb(253, 253, 253)";
@@ -221,6 +222,7 @@ LoadingScreen.prototype.gameAssetLoadingProgress = function(e) {
 					while (document.getElementById('loadingScreen_front').hasChildNodes()) {
 						document.getElementById('loadingScreen_front').removeChild(document.getElementById('loadingScreen_front').lastChild);
 					}
+					console.log(" showing percent" + that.mImageRow)
 					document.getElementById('loadingScreen_front').appendChild(that.mApplication.arrImagesTrack['percent' + that.mImageRow]);
 					document.getElementById('loadingScreen_front').style.backgroundColor ="rgb(253, 253, 253)";
 				}
