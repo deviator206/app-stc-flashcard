@@ -39,7 +39,7 @@ WinnerScreen.prototype.setUp = function() {
 		v2 = "You’ve won the Silver Star! <br>(In honour of Accenture’s Silver Anniversary)"
 	}
 
-	var sContent = '<div id="final_screen" class="finalScreen"><div id="game_screen_logo_5" class="gameScreenLogo"></div><div class="congratsTxt">' + v1 + '</div><div class="conMsg">' + v2 + '<br> <br> <a href="http://www.accenture.com/in-en/client-successes/Pages/index.aspx" target="_blank"><font size="2" color="blue">Read more</font></a></div></div>'
+	var sContent = '<div id="final_screen" class="finalScreen"><div id="game_screen_logo_5" class="gameScreenLogo"></div><div class="congratsTxt">' + v1 + '</div><div class="conMsg">' + v2 + '<br> <br> <a href="http://www.accenture.com/in-en/client-successes/Pages/index.aspx" target="_blank"><u><font size="2" color="blue">Read more about our success stories</font></u></a></div></div>'
 
 	document.getElementById('winnerScreen').innerHTML = '' + sContent;
 	var sT = getAssetPath("img", "img/images/image4.png");
