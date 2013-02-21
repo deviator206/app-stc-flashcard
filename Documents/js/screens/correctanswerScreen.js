@@ -18,7 +18,7 @@ CorrectAnswerScreen.prototype.setUp = function() {
 	//var sB = getAssetPath("img",config.questionSet[this.mApplication.nQuestionIndex].img_url);
 	var sContent = '<div id="game_screen_logo_3" class="gameScreenLogo"></div><div id="imgHolder_In_CorrectAnswerScreen" class="gameImg"></div><div class="questionTxt"><p>Yes. You are correct!</p></div><div class="explnDiv"><p>' + config.questionSet[this.mApplication.nQuestionIndex].solution + '</p></div><div id="correct_next_question" class="nextQues"></div>'
 
-	var sC = getAssetPath("img", "img/images/image4.png");
+	var sC = getAssetPath("img", "img/images/image4_small.png");
 	document.getElementById('correctanswerScreen').innerHTML = '' + sContent;
 	document.getElementById('game_screen_logo_3').style.backgroundImage = "url(" + sC + ")";
 

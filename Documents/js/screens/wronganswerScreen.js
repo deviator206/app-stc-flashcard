@@ -18,7 +18,7 @@ WrongAnswerScreen.prototype.setUp = function() {
 	var sb = getAssetPath("img", "img/iPhone/next-question.png")
 	var sContent = '<div id="game_screen_logo_4" class="gameScreenLogo"></div><div id= "imgHolder_In_Revealing" class="gameImg"></div><div class="questionTxt"><p>No, almost...</p></div><div class="explnDiv"><p>' + config.questionSet[this.mApplication.nQuestionIndex].solution + '</p></div><div id="wrong_next_question" class="nextQues"></div>'
 	document.getElementById('wronganswerScreen').innerHTML = '' + sContent;
-	var sT = getAssetPath("img", "img/images/image4.png");
+	var sT = getAssetPath("img", "img/images/image4_small.png");
 	document.getElementById('game_screen_logo_4').style.backgroundImage = "url(" + sT + ")";
 	this.mApplication.mQuestionAnswered.push(this.mApplication.nQuestionIndex);
 	var mObj = this.mApplication.arrImagesTrack[config.questionSet[this.mApplication.nQuestionIndex].img_url]

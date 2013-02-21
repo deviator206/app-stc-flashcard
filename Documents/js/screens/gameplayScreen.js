@@ -28,7 +28,7 @@ GamePlayScreen.prototype.setUp = function() {
 	sContent += '</div> </div><div class="ansSpace"></div></div>'
 
 	document.getElementById('gameplayScreen').innerHTML = '' + sContent;
-	var sA = getAssetPath("img", "img/images/image4.png");
+	var sA = getAssetPath("img", "img/images/image4_small.png");
 	document.getElementById('game_screen_logo_2').style.backgroundImage = "url(" + sA + ")";
 
 	var mObj = this.mApplication.arrImagesTrack[config.questionSet[this.mApplication.nQuestionIndex].img_url]
