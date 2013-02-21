@@ -83,8 +83,8 @@ ApplicationWrapper.prototype.setGameState = function(nGameState) {
 
 ApplicationWrapper.prototype.hideCarousel = function() {
 	if (document.getElementById('SM_carouselParent_MINI') != null) {
-		////console.log(document.getElementById('SM_carouselParent_MINI').parentNode);
-		////console.log('::'+document.getElementById('main_game_screen'));
+		//////console.log(document.getElementById('SM_carouselParent_MINI').parentNode);
+		//////console.log('::'+document.getElementById('main_game_screen'));
 
 		document.getElementById('allinone_carousel_charming_SM_main').removeChild(document.getElementById('SM_carouselParent_MINI'));
 	}
@@ -99,7 +99,7 @@ ApplicationWrapper.prototype.hideCarousel = function() {
 }
 
 ApplicationWrapper.prototype.loadMiniCarousel = function() {
-	//console.log(this.mQuestionAnswered)
+	////console.log(this.mQuestionAnswered)
 
 	if (this.mQuestionAnswered.length < config.questionSet.length) {
 		this.mCarouselQuestionTrack = new Array();
@@ -120,7 +120,7 @@ ApplicationWrapper.prototype.loadMiniCarousel = function() {
 				mObj.setAttribute('class', "reflectBelow");
 				ele.appendChild(mObj);
 			} else {
-				//console.log(i+ 'INDX :FOUND: ' + this.mQuestionAnswered.indexOf(Number(i)))
+				////console.log(i+ 'INDX :FOUND: ' + this.mQuestionAnswered.indexOf(Number(i)))
 			}
 		}
 
@@ -130,7 +130,7 @@ ApplicationWrapper.prototype.loadMiniCarousel = function() {
 			height : 75,
 			numberOfVisibleItems : 3,
 			callback : function(msg) {
-				////console.log(" CLICKED");
+				//////console.log(" CLICKED");
 				if (document.getElementById('SM_carouselParent_MINI') != null)
 					document.getElementById('SM_carouselParent_MINI').style.display = 'none';
 				CLICK_HERE_MINI_CAROUSEL(msg)
@@ -153,11 +153,26 @@ ApplicationWrapper.prototype.pauseTimer = function() {
 
 ApplicationWrapper.prototype.resumeTimer = function() {
 	clearInterval(_gMainApplication.nQuizTimer);
-	this.nQuizTimer = setInterval(this.TimerFunction.bind(this), 1000);
+	var that = this;
+	this.nQuizTimer = setInterval(function(){
+		that.nQuizTimeCntr--
+	if (that.nQuizTimeCntr <= 0) {
+		clearInterval(that.nQuizTimer)
+		that.nGameState = 130;
+		tha.nextTransition()
+	}
+	document.getElementById('timer_txt').innerHTML = '' + that.nQuizTimeCntr;
+	document.getElementById('score_txt').innerHTML = '' + that.nQuizScore;
+	
+		//console.log(' that :: '+that);
+		////console.log(' that :: '+that.TimerFunction);
+		//that.TimerFunction.bind(that)
+		////console.log(' that :: >>>');
+		}, 1000);
 }
 function CLICK_HERE_MINI_CAROUSEL(i) {
 	i = _gMainApplication.mCarouselQuestionTrack[Number(i)];
-	//console.log('mini carousel selection '+i)
+	////console.log('mini carousel selection '+i)
 	_gMainApplication.nQuestionIndex = i;
 	_gMainApplication.resumeTimer();
 	_gMainApplication.setGameState(90);
@@ -178,8 +193,23 @@ ApplicationWrapper.prototype.startGameTimer = function(i) {
 	this.nQuestionIndex = 0;
 	if (Number(this.nQuestionIndex) < 0)
 	this.nQuestionIndex = 0*/
-	////console.log('|||| --- >'+config.questionSet.length+":FINAL: "+this.nQuestionIndex)
-	this.nQuizTimer = setInterval(this.TimerFunction.bind(this), 1000);
+	//////console.log('|||| --- >'+config.questionSet.length+":FINAL: "+this.nQuestionIndex)
+	
+	var that = this;
+	this.nQuizTimer = setInterval(function(){
+		that.nQuizTimeCntr--
+	if (that.nQuizTimeCntr <= 0) {
+		clearInterval(that.nQuizTimer)
+		that.nGameState = 130;
+		tha.nextTransition()
+	}
+	document.getElementById('timer_txt').innerHTML = '' + that.nQuizTimeCntr;
+	document.getElementById('score_txt').innerHTML = '' + that.nQuizScore;
+	
+		
+		//that.TimerFunction.bind(that)
+		
+		}, 1000);
 }
 
 ApplicationWrapper.prototype.TimerFunction = function() {
@@ -310,5 +340,30 @@ function setDivText(x, y, str, id, fontColor, fontSize, fontFamily) {
 	divToAppend.style.marginTop = y + 'px';
 
 	divEle.appendChild(divToAppend);
+}
+
+
+
+if (!Array.prototype.indexOf)
+{
+  Array.prototype.indexOf = function(elt /*, from*/)
+  {
+    var len = this.length >>> 0;
+
+    var from = Number(arguments[1]) || 0;
+    from = (from < 0)
+         ? Math.ceil(from)
+         : Math.floor(from);
+    if (from < 0)
+      from += len;
+
+    for (; from < len; from++)
+    {
+      if (from in this &&
+          this[from] === elt)
+        return from;
+    }
+    return -1;
+  };
 }
 

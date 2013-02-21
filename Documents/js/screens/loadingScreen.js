@@ -190,7 +190,7 @@ LoadingScreen.prototype.gameAssetLoadingProgress = function(e) {
 	if ( Number(this.loadingProgress[percentage]) == -1) {
 		this.loadingProgress[percentage] = 1;
 		this.mImageRow = this.loadingProgress_ImagName[percentage]
-		console.log("NAME :"+this.mImageRow);
+		//console.log("NAME :"+this.mImageRow);
 		doAnim = true;
 	}
 	
@@ -222,7 +222,7 @@ LoadingScreen.prototype.gameAssetLoadingProgress = function(e) {
 					while (document.getElementById('loadingScreen_front').hasChildNodes()) {
 						document.getElementById('loadingScreen_front').removeChild(document.getElementById('loadingScreen_front').lastChild);
 					}
-					console.log(" showing percent" + that.mImageRow)
+					//console.log(" showing percent" + that.mImageRow)
 					document.getElementById('loadingScreen_front').appendChild(that.mApplication.arrImagesTrack['percent' + that.mImageRow]);
 					document.getElementById('loadingScreen_front').style.backgroundColor ="rgb(253, 253, 253)";
 				}

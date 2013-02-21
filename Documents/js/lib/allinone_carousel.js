@@ -54,7 +54,7 @@
 					//last_currentImg = jQuery('#contentHolderUnit_'+last_aux_img_no);
 					last_currentImg = jQuery('#SM_contentHolderUnit_' + last_aux_img_no, allinone_carousel_container);
 					//last_currentImg.css('z-index',current_obj.currentZ_index-1);
-					console.log('changing Left')	
+					//console.log('changing Left')	
 					new_height = contentHolderUnitOrigHeight - 2 * (m + 1) * options.elementsVerticalSpacing;
 					new_width = parseInt(new_height * current_obj.aspectOrig);
 					new_left = parseInt((options.width - contentHolderUnitOrigWidth) / 2) - (m + 1) * options.elementsHorizontalSpacing;
@@ -433,7 +433,7 @@ var bannerControls
 							current_obj.currentZ_index--;
 							resizeDiv_SMALL(contentHolderUnit, (total_images - 1), options, contentHolderUnitOrigHeight, current_obj);
 								
-							console.log(':: '+contentHolderUnitOrigWidth);
+							//console.log(':: '+contentHolderUnitOrigWidth);
 							contentHolderUnit.css('left', parseInt((options.width - contentHolderUnitOrigWidth) / 2) + (contentHolderUnitOrigWidth + (total_images - 1) * options.elementsHorizontalSpacing - contentHolderUnit.width()) + 'px');
 							contentHolderUnit.css('top', parseInt(options.height - contentHolderUnitOrigHeight) - options.verticalAdjustment + (total_images - 1) * options.elementsVerticalSpacing + 'px');
 							contentHolderUnit.css('z-index', current_obj.currentZ_index);

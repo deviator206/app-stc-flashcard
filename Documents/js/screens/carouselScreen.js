@@ -26,6 +26,7 @@ CarouselScreen.prototype.setUp = function() {
 		//console.log(' TOTAL Q '+config.questionSet.length)
 		for (var i = 0; i < config.questionSet.length; i++) {
 			var j = i + 1;
+			//console.log(i+  " :: "+ (config.questionSet.length))
 			//var km = getAssetPath("img","img/iPhone/"+i+".png");
 			var ele = document.createElement('li');
 			ele.setAttribute('id', "li_ele_" + i)

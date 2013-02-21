@@ -254,7 +254,7 @@ var config ={
 			'correct_answer':"4",
 			'solution':"The portal is a one-stop shop for government-to-citizen services. Accenture delivered the Manipur State Portal within six months, making Manipur one of the first three states across India to offer citizen services on the new State Portal framework. The portal allows 500 concurrent users and can handle up to 1,000 business transactions a day. The government of Manipur and Accenture will continue to work toward adding more government services, helping the state remain at the leading edge of e-governance."		
 			}
-			,
+			
 		
 		/*
 		{
