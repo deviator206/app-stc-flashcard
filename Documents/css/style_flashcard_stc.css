@@ -576,8 +576,9 @@ textarea {
 	position: absolute;
 height: 40px;
 width: 135px;
-bottom: 140px;
-right: 274px;
+/*bottom: 290px;*/
+bottom: 275px;
+right: 282px;
 float: left;
 }
 /* Screen 1 end */
