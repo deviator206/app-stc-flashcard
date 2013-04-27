@@ -536,19 +536,31 @@ textarea {
 	width: 120px;
 	height: 130px;
 	position: absolute;
-	top: 66px;
-	left: 82px;
+	top: 55px;
+	left: 60px;
 	float: left;
 }
 
 .screen1Txt{
-	color: #666;
-	font-size: 22px;
-	left: 83px;
-	line-height: 35px;
-	position: absolute;
-	top: 245px;
+	width: 370px;
+	color: rgb(126, 124, 124) !important;
+	font-size: 19px;
+	left: 61px;
+	line-height: 30px;
 	float: left;
+	position: relative;
+	margin-top: 34px;
+}
+
+.screen2Txt{
+	width: 375px;
+	color: rgb(126, 124, 124) !important;
+	font-size: 19px;
+	left: 91px;
+	line-height: 30px;
+	top: 100px;
+	float: left;
+	position: relative;
 }
 
 .button{
@@ -576,9 +588,8 @@ textarea {
 	position: absolute;
 height: 40px;
 width: 135px;
-/*bottom: 290px;*/
-bottom: 275px;
-right: 282px;
+bottom: 264px;
+right: 280px;
 float: left;
 }
 /* Screen 1 end */
@@ -642,7 +653,7 @@ float: left;
     font-size: 16px;
     left: 64px;
     position: relative;
-    top: 60px;
+    top: 30px;
 	float:left;
 	height:350px;
 	width:80%;
@@ -662,6 +673,39 @@ float: left;
 
 .howToPlayDiv li {
 	line-height:28px;
+}
+
+
+.howToPlay1Txt{
+	width: 400px;
+	color: #666;
+	font-size: 18px;
+	right: 13px;
+	line-height: 28px;
+	bottom: 17px;
+	float: left;
+	position: relative;
+}
+
+.howToPlay1Txt ul, .howToPlay2Txt ul{
+	margin-left:-19px;
+	line-height: 23px;
+}
+
+.howToPlay2Txt{
+	width: 390px;
+	color: #666;
+	font-size: 18px;
+	left: 407px;
+	line-height: 23px;
+	bottom: 412px;
+	float: left;
+	position: relative;
+}
+
+.howToPlay2Txt span, .howToPlay2Txt span h4{
+	margin-left:20px;
+	padding-top: 14px;
 }
 
 .backButton{
@@ -684,8 +728,8 @@ float: left;
 	position: absolute;
     /*bottom: 30px;
 	left:90px;*/
-	bottom: 88px;
-left: 492px;
+	bottom: 114px;
+left: 482px;
 	width:200px;
 	height:40px;
 	float:left;
